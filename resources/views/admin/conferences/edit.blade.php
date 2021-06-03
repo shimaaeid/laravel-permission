@@ -62,7 +62,7 @@
                   <select class="custom-select selected-governorate" name="attendee_id" >
                     <option  disabled value="">* Attendees</option>
                     @foreach($attendee as $attendee )
-                      <option  value="{{$conference->venue_id}}">{{$attendee->attendee_name}}</option>
+                      <option  value="{{$attendee->id}}">{{$attendee->attendee_name}}</option>
                     @endforeach
                   </select>
                 </div>
@@ -74,7 +74,7 @@
                   <select class="custom-select selected-governorate" name="venue_id" id="governorate_id">
                     <option  disabled value="">* Venues</option>
                     @foreach($venues as $venues)
-                      <option  value="{{$conference->attendee_id}}">{{$venues->name}}</option>
+                      <option  value="{{$venues->id}}">{{$venues->name}}</option>
                     @endforeach
                   </select>
                 </div>

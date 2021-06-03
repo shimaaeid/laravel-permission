@@ -37,7 +37,7 @@ Route::group(['prefix' => 'admin'], function(){
     Route::post('/conference', 'App\Http\Controllers\Admin\ConferencesController@store')->name('conferences.store');
     Route::get('/delete-conference/{id}', 'App\Http\Controllers\Admin\ConferencesController@delete')->name('conferences.delete');
     Route::get('/edit-conference/{id?}', 'App\Http\Controllers\Admin\ConferencesController@edit')->name('conferences.edit');
-    Route::post('/edit-conference/{id}', 'App\Http\Controllers\Admin\ConferencesController@update')->name('conferences.update');
+    Route::post('/update-conference/{id}', 'App\Http\Controllers\Admin\ConferencesController@update')->name('conferences.update');
 
 
 });

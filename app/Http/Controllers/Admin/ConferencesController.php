@@ -70,6 +70,8 @@ class ConferencesController extends Controller
 
     public function update(Request $request, $id){
 
+        //return $id;
+
         $rules = [
             'date' => 'required',
             'time' => 'required',
@@ -86,7 +88,7 @@ class ConferencesController extends Controller
           $validator = Validator::make($request->all(), $rules, $message);
 
         if($validator->fails()) {
-            return redirect()->back('admin/conferences/create')->withErrors($validator);
+            return redirect()->back('admin/conferences/edit')->withErrors($validator);
         }
 
         Conference::where('id' , $id)->update([
@@ -98,6 +100,8 @@ class ConferencesController extends Controller
             'venue_id' => $request->venue_id,
             'attendee_id' => $request->attendee_id
         ]);
+
+       // return "updated";
 
         return redirect()->route('conferences.index');
 
