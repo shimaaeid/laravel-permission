@@ -18,11 +18,11 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\Admin\ConferencesController@index');
+//Route::get('/', 'App\Http\Controllers\Admin\ConferencesController@index');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);

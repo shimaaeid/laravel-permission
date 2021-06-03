@@ -9,6 +9,16 @@ use  App\Http\Requests\AttendeeRequest;
 
 class AttendeesController extends Controller
 {
+
+    function __construct()
+    {
+         $this->middleware('permission:Attendee-list|Attendee-create|Attendee-edit|Attendee-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:Attendee-create', ['only' => ['create','store']]);
+         $this->middleware('permission:Attendee-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:Attendee-delete', ['only' => ['destroy']]);
+    }
+
+
     public function index(){
 
         $attendees = Attendee::all();

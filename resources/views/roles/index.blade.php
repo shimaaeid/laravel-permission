@@ -1,12 +1,13 @@
-@extends('layouts.app')
+@extends('admin.layouts.master')
 
 
 @section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2>Role Management</h2>
-        </div>
+    <div class="container">
+          <h2 class="text-center">Role Management</h2>
+          <hr>
+    </div>
         <div class="pull-right">
         @can('role-create')
             <a class="btn btn-success" href="{{ route('roles.create') }}"> Create New Role</a>
@@ -52,5 +53,4 @@
 {!! $roles->render() !!}
 
 
-<p class="text-center text-primary"><small>Tutorial by ItSolutionStuff.com</small></p>
 @endsection

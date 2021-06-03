@@ -1,12 +1,13 @@
-@extends('layouts.app')
+@extends('admin.layouts.master')
 
 
 @section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2> Show Role</h2>
-        </div>
+    <div class="container">
+          <h2 class="text-center">Show Role</h2>
+          <hr>
+    </div>
         <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('roles.index') }}"> Back</a>
         </div>

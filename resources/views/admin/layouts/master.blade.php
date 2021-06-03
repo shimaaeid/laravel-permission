@@ -150,6 +150,36 @@
                                 </ul>
                             </div>
                         </li>
+
+                        <li class="sidebar-dropdown">
+                            <a href="javascript:;">
+                                <i class="fas fa-edit text-warning"></i>
+                                <span>Users</span>
+                            </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="{{route('users.index')}}">Users</a>
+                                    </li>
+                                   
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="sidebar-dropdown">
+                            <a href="javascript:;">
+                                <i class="fas fa-edit text-warning"></i>
+                                <span>Roles</span>
+                            </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="{{route('roles.index')}}">Roles</a>
+                                    </li>
+                                   
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 <!-- sidebar-menu  -->

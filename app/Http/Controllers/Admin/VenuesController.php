@@ -9,6 +9,18 @@ use  App\Http\Requests\VenueRequest;
 
 class VenuesController extends Controller
 {
+
+    function __construct()
+    {
+         $this->middleware('permission:Venue-list|Venue-create|Venue-edit|Venue-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:Venue-create', ['only' => ['create','store']]);
+         $this->middleware('permission:Venue-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:Venue-delete', ['only' => ['destroy']]);
+    }
+
+    
+
+
     public function index(){
 
         $venues = Venue::all();

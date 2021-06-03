@@ -17,7 +17,7 @@ class CreateConferencesTable extends Migration
             $table->id();
             $table->date('date');
             $table->time('time');
-            $table->integer('duration'),
+            $table->integer('duration');
             $table->string('subject');
             $table->integer('venue_id');
             $table->integer('attendee_id');

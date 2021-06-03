@@ -14,6 +14,14 @@ use DB;
 class ConferencesController extends Controller
 {
 
+    function __construct()
+    {
+         $this->middleware('permission:Conference-list|Conference-create|Conference-edit|Conference-delete', ['only' => ['index','show']]);
+         $this->middleware('permission:Conference-create', ['only' => ['create','store']]);
+         $this->middleware('permission:Conference-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:Conference-delete', ['only' => ['destroy']]);
+    }
+
     public function index(){
         $conference =  DB::table('conferences')
                          ->leftJoin('attendees', 'attendees.id', '=', 'conferences.attendee_id')
