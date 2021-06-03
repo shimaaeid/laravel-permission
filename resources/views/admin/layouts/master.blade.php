@@ -44,18 +44,12 @@
                 <div class="sidebar-header text-center">
                     <div class="user-pic" >
                         @php
-                            $path =  auth()->user()->logo;
+                           
                         @endphp
                       
                     </div>
                     <div class="user-info">
                         <span class="user-name">
-                            <?php 
-                            if(strlen(auth()->user()->name) > 10)
-                                echo substr(auth()->user()->name,0,13)."...";
-                            else
-                                echo auth()->user()->name;
-                            ?>
                             
                         </span>
                         <span class="user-role">Administrator</span>
@@ -83,12 +77,12 @@
                     <ul>
                         
                         <li class="header-menu">
-                            <span>Patient</span>
+                            <span>Conference</span>
                         </li>
                         <li>
                             <a href="">
                                 <i class="fas fa-user-injured"></i>
-                                <span>Search About Patient</span>
+                                <span>Search About Conf..</span>
                             </a>
                         </li>
                         <div class="sidebar-search"></div><!-- For Horizontal line -->
@@ -144,13 +138,13 @@
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
-                                        <a href="">Laboratory</a>
+                                        <a href="{{route('venues.edit',['id'=> 1])}}">Venue</a>
                                     </li>
                                     <li>
-                                        <a href="">Add Analysis</a>
+                                        <a href="{{route('attendees.edit' ,['id'=> 1])}}">Attendees</a>
                                     </li>
                                     <li>
-                                        <a href="">Delete Analysis</a>
+                                        <a href="{{route('conferences.edit',['id'=> 1])}}">Conference</a>
                                     </li>
                                    
                                 </ul>

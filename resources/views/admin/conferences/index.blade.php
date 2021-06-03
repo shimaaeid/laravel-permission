@@ -21,6 +21,7 @@
                     <th scope="col">Subject</th>
                     <th scope="col">Attendees</th>
                     <th scope="col">Venue</th>
+                    <th scope="col">Operation</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,6 +35,24 @@
                     <td>{{$conference->subject}}</td>
                     <td>{{$conference->name}}</td>
                     <td>{{$conference->attendee_name}}</td>
+
+                    <td>
+                    <form action="{{route('conferences.edit', ['id' => $conference->id])}}" method="post" style="float:left">
+                         {{ csrf_field() }}
+                     
+                         <a href="{{route('conferences.edit',['id' => $conference->id])}}">
+                           <button type="button">Edit</button>
+                          </a>
+                    </form>
+
+                    <form action="{{route('conferences.delete', ['id' => $conference->id])}}" method="post">
+                         {{ csrf_field() }}
+                     
+                         <a href="{{route('conferences.delete',['id' => $conference->id])}}">
+                           <button type="button">Delete</button>
+                          </a>
+                    </form>
+                    </td>
                     
                 </tr>
                 @endforeach

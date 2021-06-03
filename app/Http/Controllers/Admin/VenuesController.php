@@ -27,8 +27,29 @@ class VenuesController extends Controller
         ]);
 
 
-        return redirect()->route('venus.index');
-
+        return redirect()->route('venues.index');
         
+    }
+
+    public function delete($id){
+
+        Venue::where('id', $id)->delete();
+
+        return redirect()->route('venues.index'); 
+
+    }
+
+    public function edit($id = null){
+
+        $venue = Venue::where('id', $id)->select('id','name')->first();
+        return view('admin/venues/edit', compact('venue'));
+    }
+
+    public function update(VenueRequest $request, $id){
+
+        Venue::where('id',$id)->update([
+            'name'  => $request->name
+        ]);
+        return redirect()->route('venues.index');
     }
 }

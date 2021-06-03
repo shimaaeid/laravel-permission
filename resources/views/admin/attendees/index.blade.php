@@ -30,12 +30,19 @@
                     <td>{{$attendees->mobile}}</td>
                     <td>{{$attendees->side}}</td>
                     <td>
-                    <a><input type="submit" value="Update"></a>
+                    <form action="{{route('attendees.edit', ['id' => $attendees->id])}}" method="post" style="float:left">
+                         {{ csrf_field() }}
+                     
+                         <a href="{{route('attendees.edit',['id' => $attendees->id])}}">
+                           <button type="button">Edit</button>
+                          </a>
+                    </form>
+
                     <form action="{{route('attendees.delete', ['id' => $attendees->id])}}" method="post">
                          {{ csrf_field() }}
                      
                          <a href="{{route('attendees.delete',['id' => $attendees->id])}}">
-                           <button type="button">delete</button>
+                           <button type="button">Delete</button>
                           </a>
                     </form>
                     </td>
