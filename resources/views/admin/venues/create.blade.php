@@ -5,7 +5,11 @@
 @endsection
 
 @section('content')
-
+<div class="container">
+          <h2 class="text-center">Venues Form Create</h2>
+          <hr>
+        </div>
+        <div class="container">
 <form method="POST" action="{{route('venues.store')}}" class="ValidationForm" enctype="multipart/form-data">
             @csrf
             <div class="row">
@@ -28,6 +32,6 @@
             </div>
 
           </form>
-   
+   </div>
 @section('scripts')
 @endsection

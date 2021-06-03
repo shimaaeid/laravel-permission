@@ -12,6 +12,12 @@
      @endforeach
  @endif
 
+ <div class="container">
+          <h2 class="text-center">Conference Form Edit</h2>
+          <hr>
+        </div>
+
+ <div class="container">
 <form method="POST" action="{{route('conferences.update', ['id' => $conference->id])}}" class="ValidationForm" enctype="multipart/form-data">
             @csrf
             <div class="row">
@@ -89,6 +95,8 @@
             </div>
 
           </form>
+
+          </div>
    
 @section('scripts')
 @endsection

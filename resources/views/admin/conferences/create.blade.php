@@ -11,7 +11,11 @@
          <div>{{$error}}</div>
      @endforeach
  @endif
-
+ <div class="container">
+          <h2 class="text-center">Conference Form Create</h2>
+          <hr>
+        </div>
+ <div class="container">
 <form method="POST" action="{{route('conferences.store')}}" class="ValidationForm" enctype="multipart/form-data">
             @csrf
             <div class="row">
@@ -87,8 +91,9 @@
                 <button type="submit" name="submit" class="btn btn-success btn-block">Add</button>
               </div> <!-- form-group// -->
             </div>
-
           </form>
+
+          </div>
    
 @section('scripts')
 @endsection
